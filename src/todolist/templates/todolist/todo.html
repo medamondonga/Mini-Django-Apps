@@ -11,10 +11,14 @@
     <div class="container">
         <div class="todo-app">
             <h2>My Toto-List <img src="{% static 'img/icon.png' %}" alt="un cahier"></h2>
-            <div class="row">
-                <input type="text" id="input-box" placeholder="Ajouter une tache">
-                <button onclick="addTask()">Ajouter</button>
-            </div>
+            {% for field in task %}
+            <form method="POST" class="row">
+                {% comment %} <input type="text" id="input-box" placeholder="Ajouter une tache"> {% endcomment %}
+                {% csrf_token %}
+                {{field}}
+                <button onclick="addTask()" type="submit">Ajouter</button>
+            </form>
+            {% endfor %}
             <ul id="list-container">
 
             </ul>
