@@ -1,2 +1,5 @@
 .env/
 src/db.sqlite3
+node_modules/
+src/theme/static_src/node_modules/
+.idea/
