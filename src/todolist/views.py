@@ -19,3 +19,6 @@ def todo(request):
     else:
         task = AddTask()
     return render(request, 'todolist/todo.html', {"task": task})
+
+def test(request):
+    return render(request, "todolist/test.html")
