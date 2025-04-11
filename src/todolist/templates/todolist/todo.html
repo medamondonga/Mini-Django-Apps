@@ -5,23 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo-App</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" >
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <div class="container">
         <div class="todo-app">
             <h2>My Toto-List <img src="{% static 'img/icon.png' %}" alt="un cahier"></h2>
-            {% for field in task %}
             <form method="POST" class="row">
                 {% comment %} <input type="text" id="input-box" placeholder="Ajouter une tache"> {% endcomment %}
                 {% csrf_token %}
-                {{field}}
-                <button onclick="addTask()" type="submit">Ajouter</button>
+                {{ form.name }}
+                {{object.name}}
+                <button type="submit">{{soumission}}</button>
             </form>
-            {% endfor %}
             <ul id="list-container">
-
+                
             </ul>
         </div>
     </div>
